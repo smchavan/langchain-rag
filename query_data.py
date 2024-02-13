@@ -4,6 +4,7 @@ from langchain.vectorstores.chroma import Chroma
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.chat_models import ChatOpenAI
 from langchain.prompts import ChatPromptTemplate
+from dotenv import load_dotenv
 
 CHROMA_PATH = "chroma"
 
@@ -19,6 +20,7 @@ Answer the question based on the above context: {question}
 
 
 def main():
+    load_dotenv()
     # Create CLI.
     parser = argparse.ArgumentParser()
     parser.add_argument("query_text", type=str, help="The query text.")
